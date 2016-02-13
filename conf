@@ -1,0 +1,21 @@
+#!/bin/bash
+
+myPath="/opt/freepbx_tls_srtp"
+
+gitPath="https://github.com/shatfel/freebpx.git"
+gitCmd="git clone ${gitPath}"
+
+certGenBin="${myPath}/bin/ast_tls_cert"
+certServerName='server.name.here.or.ip'
+certCompanyName='Company Name'
+
+asteriskKeysPath='/ets/asterisk/keys'
+
+sipCustom="${myPath}/doc/sip_custom.conf"
+sipCustom_ASTERISK_KEY_PATH="${asteriskKeysPath}"
+
+sipTempalte="${myPath}/doc/sip_template.conf"
+sipTemplate_NAME="User - 1234"
+sipTemplate_NUMBER="123"
+sipTemplate_PASSWORD="${sipTemplate_NUMBER}\@${certServerName}"
+sipTemplate_PORT="5060"
